@@ -1,0 +1,49 @@
+# --- QMIX specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy_with_prob"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 200000
+
+runner: "episode_1"
+mac: "basic_mac_1"
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+target_mac_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q" # Treat it as qs, just train via policy gradient
+#agent_output_type: "pi_logits"
+learner: "self_enhanced_ddpg_double"
+double_q: False
+
+
+central_loss: 1
+qmix_loss: 1
+w: 0.1
+central_mixing_embed_dim: 256
+central_mixer: "ff"
+
+policy_temp: 1
+logit_entropy: 0.11 #0
+
+central_action_embed: 1
+central_mac: "basic_central_mac"
+central_agent: "central_rnn"
+
+name: "self_enhanced_ddpg"
+alpha: 100
+
+test_return_record: 0
+central_rnn_hidden_dim: 64
+
+
+#===
+mixing_embed_dim: 32
+hypernet_layers: 1
+hypernet_embed: 32
+
+

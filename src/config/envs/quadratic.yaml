@@ -1,0 +1,13 @@
+env: "quadratic"
+
+env_args:
+  map_name: "quadratic"
+
+test_nepisode: 32
+test_interval: 2000
+log_interval: 2000
+runner_log_interval: 2000
+learner_log_interval: 2000
+t_max: 50000
+
+q_table: False
